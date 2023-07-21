@@ -7,9 +7,9 @@ body {
 }
 
 #image-track > .image {
-    width: 26rem;
-    height: 32rem;
-    object-fit: cover;
+    width: 38vmin;
+    height: 54vmin;
+    object-fit: none;
     object-position: center;
 }
 
