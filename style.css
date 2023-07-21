@@ -1,7 +1,7 @@
 body {
     height: 100vh;
     width: 100vh;
-    background-color: black;
+    background: rgb(5,0,5);
     margin: 0rem;
     overflow: hidden;
 }
