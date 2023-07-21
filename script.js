@@ -13,7 +13,7 @@ window.onmouseup = e => {
 window.onmousemove = e => {
     if (track.dataset.mouseDownAt === "0") return;
     const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;
-    const maxDelta = window.innerWidth / 1.5;
+    const maxDelta = window.innerWidth / 1.8;
     
     const percentage = (mouseDelta / maxDelta) * -100;
     let nextPercentage = parseFloat(track.dataset.percentScroll) + percentage;
@@ -25,7 +25,7 @@ window.onmousemove = e => {
 
     track.style.transform = `translate(${nextPercentage}%, -50%)`
     for (const image of track.getElementsByClassName("image")) {
-        image.style.objectPosition = `${2 * (nextPercentage + 75)}% 50%`;
+        image.style.objectPosition = `${((nextPercentage) + 100)}% 50%`;
     }
 }
 
