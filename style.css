@@ -6,6 +6,17 @@ body {
     overflow: hidden;
 }
 
+.heading {
+    color: aliceblue;
+    font-size: xx-large;
+    font-family: sans-serif;
+    letter-spacing: -0.1ch;
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translate(35%, -50%);
+}
+
 #image-track > .image {
     width: 38vmin;
     height: 54vmin;
