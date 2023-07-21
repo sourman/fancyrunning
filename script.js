@@ -1,6 +1,17 @@
 const track = document.getElementById("image-track");
 const heading = document.getElementById("heading");
 
+window.onload = e => {
+    const words = heading.getElementsByClassName("word");
+    for(i = 0; i < words.length; i++) {
+        const word = words[i];
+
+        /** Percentage representing the individual word's location in the list of words */
+        const wordRegion =  ((i + 0.5) / words.length) * 100;
+        word.style.opacity = fuzzyMatch(wordRegion, 0, words.length) / 100;
+    }
+}
+
 /**
  * Calculate how much an an item matches the reference as a percentage
  * @param {float} itemPercent - Must be 0.0 - 100.0
