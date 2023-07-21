@@ -1,5 +1,17 @@
 const track = document.getElementById("image-track");
-let potatohead = 0;
+
+/**
+ * Calculate how much an an item matches the reference as a percentage
+ * @param {float} itemPercent - Must be 0.0 - 100.0
+ * @param {float} reference - Must be 0.0 - 100.0
+ * @param {int} numMatches - Number of items to fuzz-match
+ * @returns {float} - Percentage of matching for this current item
+ */
+function fuzzyMatch(itemPercent, reference, numMatches) {
+    const delta = Math.abs(itemPercent - reference);
+    const quadraticDelta = (Math.sqrt(numMatches) * delta * delta / (100 / numMatches));
+    return Math.max(100 - quadraticDelta, 0);
+}
 
 window.onmousedown = e => {
     track.dataset.mouseDownAt = e.clientX;
