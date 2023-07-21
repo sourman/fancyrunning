@@ -6,14 +6,14 @@ body {
     overflow: hidden;
 }
 
-.heading {
+#heading {
     color: aliceblue;
     font-size: xx-large;
     font-family: sans-serif;
     letter-spacing: -0.1ch;
     position: relative;
     top: 10%;
-    left: 50%;
+    left: 35%;
     transform: translate(35%, -50%);
 }
 
