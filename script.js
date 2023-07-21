@@ -1,4 +1,5 @@
 const track = document.getElementById("image-track");
+const heading = document.getElementById("heading");
 
 /**
  * Calculate how much an an item matches the reference as a percentage
@@ -42,6 +43,14 @@ window.onmousemove = e => {
     for (const image of track.getElementsByClassName("image")) {
         image.animate({ objectPosition: `${nextPercentage + 100}% 50%` },
                         { duration: 1200, fill:"forwards" });
+    }
+    const words = heading.getElementsByClassName("word")
+    for(i = 0; i < words.length; i++) {
+        const word = words[i];
+
+        /** Percentage representing the individual word's location in the list of words */
+        const wordRegion =  ((i + 0.5) / words.length) * 100;
+        word.style.opacity = fuzzyMatch(wordRegion, -nextPercentage, words.length) / 100;
     }
 }
 
