@@ -61,7 +61,7 @@ window.onmousemove = e => {
 
         /** Percentage representing the individual word's location in the list of words */
         const wordRegion =  ((i + 0.5) / words.length) * 100;
-        word.style.opacity = fuzzyMatch(wordRegion, -nextPercentage, words.length) / 100;
+        word.style.opacity = fuzzyMatch(wordRegion, -nextPercentage, words.length) / 200;
     }
 }
 
